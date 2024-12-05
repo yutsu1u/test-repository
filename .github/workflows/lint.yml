@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Lint
 
 on:
@@ -5,10 +6,17 @@ on:
     branches:
       - main
 
+=======
+name: Lint Code
+on:
+  pull_request:
+    branches: [ main ]
+>>>>>>> 6a5111a81a1e4a52e8abc3d0c2a526f07d138e89
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -22,3 +30,12 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+=======
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm ci
+      - run: npm run lint
+>>>>>>> 6a5111a81a1e4a52e8abc3d0c2a526f07d138e89
